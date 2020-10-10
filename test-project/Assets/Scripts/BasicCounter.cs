@@ -6,7 +6,7 @@ public class BasicCounter
 
   public BasicCounter(int count = 0)
   {
-    Count = count;
+    Count = count ;
   }
 
   public void Increment()
