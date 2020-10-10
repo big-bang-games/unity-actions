@@ -10,7 +10,7 @@ env:
 jobs:
   readmeWorkflow:
     name: Readme Workflow ✨
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       # Checkout
       - name: Checkout repository
@@ -53,7 +53,7 @@ jobs:
 
   requestManualActivationFile:
     name: Request manual activation file 🔑
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
@@ -77,14 +77,14 @@ jobs:
 
   requestActivation:
     name: Request activation ✔
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - uses: webbertakken/unity-activate@v1.2
 
   activateAndThenReturnLicense:
     name: returnLicense 🎈
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - uses: webbertakken/unity-activate@v1.2
@@ -92,7 +92,7 @@ jobs:
 
   testRunnerInEditMode:
     name: Test in editmode 📝
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       # Checkout repository (required to test local actions)
       - uses: actions/checkout@v2
@@ -123,7 +123,7 @@ jobs:
 
   testRunnerInPlayMode:
     name: Test in playmode 📺
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       # Checkout repository (required to test local actions)
       - uses: actions/checkout@v2
@@ -154,7 +154,7 @@ jobs:
 
   testRunnerInAllModes:
     name: Test all modes ✨
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       # Checkout repository (required to test local actions)
       - uses: actions/checkout@v2
@@ -189,7 +189,7 @@ jobs:
 
   buildAndTestForSomePlatforms:
     name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
